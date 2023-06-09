@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div id="progressbar"></div>
   <div style="position: relative;" class="">
     <!-- Header -->
     <section id="header">
@@ -25,7 +26,7 @@
             </div>
             <ul>
               <li><a href="#hero" data-after="Home">Home</a></li>
-              <!-- <li><a href="#services" data-after="Service">Services</a></li> -->
+              <li><a href="#services" data-after="Service">Certificates</a></li>
               <li><a href="#projects" data-after="Projects">Projects</a></li>
               <li><a href="#about" data-after="About">About</a></li>
               <li><a href="#contact" data-after="Contact">Contact</a></li>
@@ -43,7 +44,7 @@
         <div>
           <h1>Hello, <span></span></h1>
           <h1>My Name is <span></span></h1>
-          <h1>Mayank Agarwal </h1>
+          <h1>Mayank Agarwal</h1>
           <a href="#projects" type="button" class="cta">Portfolio</a>
         </div>
       </div>
@@ -250,7 +251,7 @@
       <div class="about container">
         <div class="col-left">
           <div class="about-img">
-            <img src="./img/img-8.jpg" alt="img">
+            <img src="./img/img-8.png" alt="img">
           </div>
         </div>
         <div class="col-right">
@@ -359,5 +360,24 @@
 </body>
 <script src="./app.js"></script>
 <script src="./main.js"></script>
+<script type="text/javascript">
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 0) {
+      // document.body.style.background = "black"
+      // document.querySelector(".first2").style.backgroundColor = "maroon"
+      document.querySelector(".change").style.color = "white"
+    }
+    else {
+      // document.querySelector(".first2").style.backgroundColor = "black"
+      document.querySelector(".change").style.color = "white"
+    }
+  });
+  let progress = document.getElementById('progressbar');
+  let zeeshan = document.body.scrollHeight - window.innerHeight;
+  window.onscroll = function () {
+    let progressHeight = (window.pageYOffset / zeeshan) * 104 + "%";
+    progress.style.height = progressHeight;
 
+  }
+</script>
 </html>
